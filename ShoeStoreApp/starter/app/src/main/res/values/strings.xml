@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <string name="email">Email: </string>
+    <string name="password">Password:</string>
+    <string name="password_hint">Enter Password</string>
+    <string name="email_hint">Enter Email</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="log_in_button">Log In</string>
+    <string name="welcome_text">Estrella Shoe Store</string>
+    <string name="continue_button">Continue</string>
+    <string name="description_text">Shop and Explore!</string>
+    <string name="instruction_text">Instruction:</string>
+    <string name="instruction_desciption">Scroll through the app to find different shoes and tap the button to add shoe entry of your choice</string>
+    <string name="shoe_detail_floating_button">A button to navigate to the shoe detail screen</string>
+    <string name="shoe_name_text">Shoe Name</string>
+    <string name="company_text">Company</string>
+    <string name="shoe_size_text">Shoe Size</string>
+    <string name="description_detail_text">Description</string>
+    <string name="hint_shoe">Shoe Name</string>
+    <string name="hint_company">Company Name</string>
+    <string name="shoe_size_hint">Inches</string>
+    <string name="description_hint">Shoe Description</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="submit_button">Submit</string>
+    <string name="log_out">Logout</string>
+    <string name="title_login">Log In</string>
+    <string name="title_welcome">Welcome</string>
+    <string name="title_instructions">Instruction</string>
+    <string name="title_shoe_list">Shoe List</string>
+    <string name="title_shoe_detail">Shoe Details</string>
+</resources>

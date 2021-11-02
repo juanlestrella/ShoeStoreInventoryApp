@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?><!--Constraint layout to keep the textviews, editviews,
+and buttons in the center and constraint to each other-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LogInFragment">
+
+        <TextView
+            android:id="@+id/email_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="312dp"
+            android:text="@string/email"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/password_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:text="@string/password"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email_label"
+            app:layout_constraintVertical_bias="0.065" />
+
+        <EditText
+            android:id="@+id/edit_text_email"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:hint="@string/email_hint"
+            android:inputType="textEmailAddress"
+            android:textAlignment="center"
+            app:layout_constraintBaseline_toBaselineOf="@+id/email_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/email_label" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            app:layout_constraintBaseline_toBaselineOf="@+id/password_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/password_label" />
+
+        <Button
+            android:id="@+id/sign_up_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/sign_up"
+            app:layout_constraintEnd_toStartOf="@id/log_in_button"
+            app:layout_constraintTop_toBottomOf="@id/editTextTextPassword" />
+
+        <Button
+            android:id="@+id/log_in_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="36dp"
+            android:text="@string/log_in_button"
+            app:layout_constraintBaseline_toBaselineOf="@+id/sign_up_button"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
