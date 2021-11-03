@@ -9,13 +9,16 @@ and constraint to each other-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#D0B48B"
         tools:context=".InstructionFragment">
 
         <TextView
             android:id="@+id/instruction_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="serif-monospace"
             android:text="@string/instruction_text"
+            android:textColor="#342B27"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -28,8 +31,10 @@ and constraint to each other-->
             android:id="@+id/instruction_description_text"
             android:layout_width="214dp"
             android:layout_height="92dp"
+            android:fontFamily="serif-monospace"
             android:text="@string/instruction_desciption"
             android:textAlignment="center"
+            android:textColor="#342B27"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +47,9 @@ and constraint to each other-->
             android:id="@+id/continue_instruction_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/asar"
             android:text="@string/continue_button"
+            android:textColor="#342B27"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"

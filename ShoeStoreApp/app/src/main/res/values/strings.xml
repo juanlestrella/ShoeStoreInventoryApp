@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">ShoeStore</string>
     <string name="email">Email: </string>
     <string name="password">Password:</string>
@@ -6,7 +6,7 @@
     <string name="email_hint">Enter Email</string>
     <string name="sign_up">Sign Up</string>
     <string name="log_in_button">Log In</string>
-    <string name="welcome_text">Estrella Shoe Store</string>
+    <string name="welcome_text">Estrella\'s Shoes Store</string>
     <string name="continue_button">Continue</string>
     <string name="description_text">Shop and Explore!</string>
     <string name="instruction_text">Instruction:</string>
