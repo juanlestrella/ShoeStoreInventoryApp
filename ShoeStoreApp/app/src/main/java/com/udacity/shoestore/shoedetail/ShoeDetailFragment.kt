@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.MainActivity
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeDetailFragmentBinding
+import com.udacity.shoestore.models.Shoe
 import com.udacity.shoestore.viewmodel.ViewModelApp
 
 class ShoeDetailFragment : Fragment() {
@@ -19,15 +20,16 @@ class ShoeDetailFragment : Fragment() {
     private lateinit var binding: ShoeDetailFragmentBinding
     private val viewModel: ViewModelApp by activityViewModels()
     private val activity: MainActivity = MainActivity()
+//    private val shoe: Shoe = Shoe("", 0.0, "", "")
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(
+        binding = ShoeDetailFragmentBinding.inflate(
             inflater,
-            R.layout.shoe_detail_fragment,
             container,
             false
         )
@@ -38,24 +40,19 @@ class ShoeDetailFragment : Fragment() {
             goToShoeList()
         }
         binding.submitButton.setOnClickListener {
-            val name = binding.shoeNameEditText.text.toString()
-            val size = binding.shoeSizeTextView.text.toString()
-            val company = binding.companyEditText.text.toString()
-            val description = binding.descriptionDetailTextView.text.toString()
-
-            if (name.isNullOrEmpty()) {
+            if (viewModel.name.isNullOrEmpty()) {
                 Toast.makeText(context, "Please Enter Shoe Name", Toast.LENGTH_LONG).show()
-            } else if (company.isNullOrEmpty()) {
+            } else if (viewModel.company.isNullOrEmpty()) {
                 Toast.makeText(context, "Please Enter Company Name", Toast.LENGTH_LONG).show()
-            } else if (size.isNullOrEmpty()) {
+            } else if (viewModel.size.isNullOrEmpty()) {
                 Toast.makeText(context, "Please Enter Shoe Size", Toast.LENGTH_LONG).show()
-            } else if (description.isNullOrEmpty()) {
+            } else if (viewModel.description.isNullOrEmpty()) {
                 Toast.makeText(context, "Please Enter Description", Toast.LENGTH_LONG).show()
             } else {
-                (viewModel as ViewModelApp).addShoe(name, size.toDouble(), company, description)
+                viewModel.addShoes()
+                activity.hideKeyBoard()
                 goToShoeList()
             }
-            activity.hideKeyBoard()
         }
 
         return binding.root

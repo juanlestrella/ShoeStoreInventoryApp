@@ -7,6 +7,10 @@ constraint to each other-->
     <data>
 
         <variable
+            name="model"
+            type="com.udacity.shoestore.models.Shoe" />
+        
+        <variable
             name="shoeViewModel"
             type="com.udacity.shoestore.viewmodel.ViewModelApp" />
     </data>
@@ -15,7 +19,6 @@ constraint to each other-->
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#D0B48B">
-
 
         <TextView
             android:id="@+id/shoe_name_text"
@@ -44,19 +47,6 @@ constraint to each other-->
             app:layout_constraintTop_toBottomOf="@+id/company_text" />
 
         <TextView
-            android:id="@+id/Description_detail_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="serif-monospace"
-            android:text="@string/description_detail_text"
-            android:textColor="#342B27"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shoe_size_text" />
-
-        <TextView
             android:id="@+id/company_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -69,21 +59,18 @@ constraint to each other-->
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_name_text" />
 
-        <EditText
-            android:id="@+id/description_detail_textView"
+        <TextView
+            android:id="@+id/Description_detail_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:ems="10"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="12dp"
             android:fontFamily="serif-monospace"
-            android:gravity="start|top"
-            android:hint="@string/description_hint"
-            android:inputType="textImeMultiLine"
-            android:textAlignment="center"
+            android:text="@string/description_detail_text"
             android:textColor="#342B27"
-            app:layout_constraintBaseline_toBaselineOf="@+id/Description_detail_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:ignore="RtlCompat" />
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_size_text" />
 
         <EditText
             android:id="@+id/shoe_name_editText"
@@ -95,6 +82,7 @@ constraint to each other-->
             android:fontFamily="serif-monospace"
             android:hint="@string/hint_shoe"
             android:inputType="textPersonName"
+            android:text="@={shoeViewModel.name}"
             android:textAlignment="center"
             android:textColor="#342B27"
             app:layout_constraintBottom_toTopOf="@+id/company_editText"
@@ -110,6 +98,7 @@ constraint to each other-->
             android:fontFamily="serif-monospace"
             android:hint="@string/hint_company"
             android:inputType="textPersonName"
+            android:text="@={shoeViewModel.company}"
             android:textAlignment="center"
             android:textColor="#342B27"
             app:layout_constraintBottom_toTopOf="@+id/shoe_size_textView"
@@ -124,11 +113,30 @@ constraint to each other-->
             android:ems="10"
             android:fontFamily="serif-monospace"
             android:hint="@string/shoe_size_hint"
+            android:text="@={shoeViewModel.size}"
             android:inputType="numberDecimal"
             android:textAlignment="center"
             android:textColor="#342B27"
+
             app:layout_constraintBottom_toTopOf="@+id/description_detail_textView"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <EditText
+            android:id="@+id/description_detail_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:ems="10"
+            android:fontFamily="serif-monospace"
+            android:gravity="start|top"
+            android:hint="@string/description_hint"
+            android:inputType="textImeMultiLine"
+            android:text="@={shoeViewModel.description}"
+            android:textAlignment="center"
+            android:textColor="#342B27"
+            app:layout_constraintBaseline_toBaselineOf="@+id/Description_detail_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="RtlCompat" />
 
         <Button
             android:id="@+id/submit_button"
@@ -140,7 +148,8 @@ constraint to each other-->
             android:text="@string/submit_button"
             android:textColor="#342B27"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description_detail_textView" />
 
         <Button
             android:id="@+id/cancel_button"

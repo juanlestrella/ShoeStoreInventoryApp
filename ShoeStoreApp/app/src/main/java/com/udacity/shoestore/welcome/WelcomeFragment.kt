@@ -19,9 +19,8 @@ class WelcomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(
+        binding = WelcomeFragmentBinding.inflate(
             inflater,
-            R.layout.welcome_fragment,
             container,
             false
         )
